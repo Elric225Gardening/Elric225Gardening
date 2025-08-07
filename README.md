@@ -1,9 +1,9 @@
 - 👋 Hi, I’m @Elric225Gardening
-- 👀 I’m interested in Full Stack dev
-- 🌱 I’m currently learning Python 
+- 👀 I do code for school and its fun 
+- 🌱 I’m currently learning Python/Java
 - 📫 How to reach me discord elric225
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: im sadly french
 
 
-I started few days ago , i will post some of my code , but for the moment I just learn :) 
+I post simple code
