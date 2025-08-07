@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        String[] choix = {"pierre","papier","ciseau"};
+        String joueur;
+        String ordinateur ="";
+        String encore = "oui";
+
+        while(encore.equals("oui")){
+            System.out.print("\nChoissier entre pierre,papier et ciseau : ");
+            joueur = scanner.nextLine().toLowerCase();
+            if(!joueur.equals("pierre") && !joueur.equals("papier") && !joueur.equals("ciseau")){
+                System.out.println("Choix invalide ! ");
+                continue;
+            }
+            ordinateur = choix[random.nextInt(3)];
+            System.out.println("L'orinateur choisis "+ordinateur+" !!!");
+
+            if(joueur.equals(ordinateur)){
+                System.out.println("Egalité");
+                System.out.print("Voulez vous encore jouer ? (oui/non) : ");
+                encore = scanner.nextLine();
+            }
+            else if(joueur.equals("pierre")&& ordinateur.equals("ciseau") || joueur.equals("ciseau") && ordinateur.equals("papier") || joueur.equals("papier") && ordinateur.equals("pierre")){
+                System.out.println("Gagner ! ");
+                System.out.print("Voulez vous encore jouer ? (oui/non) : ");
+                encore = scanner.nextLine();
+            } else if (joueur.equals("pierre")&& ordinateur.equals("papier") || joueur.equals("ciseau") && ordinateur.equals("pierre") || joueur.equals("papier") && ordinateur.equals("ciseau")) {
+                System.out.println("Perdu ....\n");
+                System.out.print("Voulez vous encore jouer ? (oui/non) : ");
+                encore = scanner.nextLine();
+            }
+            if(encore.equals("non")){
+                System.out.println("\nHate de vous revoir !!ヾ(＾ ∇ ＾). ");
+            }
+
+        }
+    }
+
+}
