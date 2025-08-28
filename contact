@@ -1,0 +1,68 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.util.ArrayList;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        ArrayList arrayList = new ArrayList<>();
+
+        int choix = 0;
+
+        ArrayList<String> contacts = new ArrayList<String>();
+
+
+        System.out.println("=== Menu Contacts ===\n" +
+                "1. Ajouter un contact\n" +
+                "2. Afficher tous les contacts\n" +
+                "3. Rechercher un contact par nom\n" +
+                "4. Supprimer un contact\n" +
+                "5. Quitter\n");
+
+        while (choix != 5) {
+            System.out.print("Entrez votre choix : ");
+            choix = scanner.nextInt();
+
+            if (choix == 1) {
+                scanner.nextLine();
+                System.out.print("Entrez le nom du contact :");
+                String contact = scanner.nextLine();
+                System.out.print("Entrez le numéro du contact :");
+                String num = scanner.nextLine();
+                contacts.add( contact +" "+ num);
+            } else if (choix == 2) {
+                System.out.println(contacts);
+            } else if (choix == 3) {
+                scanner.nextLine();
+                System.out.println("Entre le nom du contact a chercher : ");
+                String guess = scanner.nextLine();
+                for (String cont : contacts) {
+                    if (cont.toLowerCase().contains(guess.toLowerCase())) {
+                        System.out.println("Contact trouvé");
+                    }
+                    else {
+                        System.out.println("Contact introuvable");
+                    }
+                }
+            } else if (choix == 4) {
+                scanner.nextLine();
+                System.out.print("Quel contact voulez vous enlevez : ");
+                String retirer = scanner.nextLine();
+                for (int i = 0; i < contacts.size(); i++) {
+                    String contact = contacts.get(i);
+                    if (contact.toLowerCase().contains(retirer.toLowerCase())) {
+                        contacts.remove(i);
+                        System.out.println("Contact supprimé : " + contact);
+                    } else {
+                        System.out.println("Contact introuvable");
+                    }
+                }
+            }
+
+        }
+        System.out.println("Aurevoir");
+
+    }
+
+
